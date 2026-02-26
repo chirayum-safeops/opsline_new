@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    --primary: 207 60% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 207 25% 95%;
+    --secondary-foreground: 210 53% 20%;
+
+    --muted: 207 18% 96%;
+    --muted-foreground: 210 20% 47%;
+
+    --accent: 152 52% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 207 18% 91%;
+    --input: 207 18% 91%;
+    --ring: 207 60% 48%;
+
+    --radius: 0.75rem;
+
+    --opsline-blue: 207 60% 48%;
+    --opsline-blue-glow: 207 60% 60%;
+    --opsline-dark: 210 53% 23%;
+    --opsline-light: 207 25% 97%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 207 60% 48%;
+  }
+
+  .dark {
+    --background: 210 30% 5%;
+    --foreground: 0 0% 98%;
+    --card: 210 30% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 210 30% 8%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 207 60% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 33% 18%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 210 33% 18%;
+    --muted-foreground: 207 20% 65%;
+    --accent: 152 52% 48%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 33% 18%;
+    --input: 210 33% 18%;
+    --ring: 207 60% 48%;
+    --sidebar-background: 210 30% 10%;
+    --sidebar-foreground: 207 20% 95%;
+    --sidebar-primary: 207 60% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 16%;
+    --sidebar-accent-foreground: 207 20% 95%;
+    --sidebar-border: 210 20% 16%;
+    --sidebar-ring: 207 60% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-gradient-blue {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(207,60%,48%)] to-[hsl(152,52%,48%)];
+  }
+}
+
+/* Calendly badge override */
+.calendly-badge-widget {
+  z-index: 50 !important;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
